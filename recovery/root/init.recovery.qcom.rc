@@ -47,5 +47,9 @@ on init
     symlink /sdcard /storage/sdcard0
     
 service qseecomd /sbin/qseecomd
+    oneshot
     disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
 
