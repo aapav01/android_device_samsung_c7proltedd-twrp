@@ -24,34 +24,16 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-
-on init
-    wait /dev/ion
-    wait /dev/qseecom
-
-    chown system system /dev/ion
-    chown system drmrpc /dev/qseecom
-
-    start qseecomd
-    
-    start qfintverify
-    # Set permissions for persist partition
-    mkdir /persist 0771 system system
-
-    mkdir /preload 0771 system system
-
-    export EXTERNAL_STORAGE /sdcard
-
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
-    
-service qseecomd /sbin/qseecomd
+   
+service sbinqseecomd /sbin/qseecomd
     oneshot
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
+
+on property:ro.crypto.state=encrypted
+    start sbinqseecomd
 
 on boot
     # save battery by switching to interactive once booted
