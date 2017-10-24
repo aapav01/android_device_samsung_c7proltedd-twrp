@@ -41,3 +41,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=c7proltedd \
     BUILD_FINGERPRINT=samsung/c7proltedd/c7prolte:6.0.1/MMB29M/C701FDDU1AQE3:user/release-keys \
     PRIVATE_BUILD_DESC="c7proltedd-user 6.0.1 MMB29M C701FDDU1AQE3 release-keys"
+
+
+# DTB Work-Around
+PRODUCT_COPY_FILES += \
+    device/samsung/c7prolte/dt.img:dt.img

@@ -73,6 +73,9 @@ TARGET_USES_UNCOMPRESSED_KERNEL    := true
 TARGET_KERNEL_SOURCE               := kernel/samsung/c7prolte
 TARGET_KERNEL_CONFIG               := lineageos_c7prolte_defconfig
 
+# DTB
+TARGET_PREBUILT_DTB := device/samsung/c7prolte/dt.img
+
 # MKBootImg
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/c7prolte/mkbootimg.mk
 
