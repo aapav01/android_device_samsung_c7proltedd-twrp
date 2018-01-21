@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_j7popltespr.mk
+    $(LOCAL_DIR)/omni_c7proltedd.mk

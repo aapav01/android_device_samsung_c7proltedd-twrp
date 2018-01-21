@@ -27,15 +27,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_PACKAGES += \
+    libcryptfs_hw \
     charger_res_images \
     charger
 
-PRODUCT_NAME := omni_j7popltespr
-PRODUCT_DEVICE := j7popltespr
+PRODUCT_NAME := omni_c7proltedd
+PRODUCT_DEVICE := c7proltedd
 PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := SM-J727P
+PRODUCT_MODEL := SM-C701F
 PRODUCT_MANUFACTURER := Samsung
 
 # DTB Work-Around
 PRODUCT_COPY_FILES += \
-    device/samsung/j7popltespr/dt.img:dt.img
+    device/samsung/c7proltedd/dt.img:dt.img
