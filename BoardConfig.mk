@@ -21,8 +21,6 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
-# DTB
-TARGET_PREBUILT_DTB := device/samsung/c7proltedd/dt.img
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
