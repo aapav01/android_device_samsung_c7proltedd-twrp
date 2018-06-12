@@ -17,26 +17,20 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 PRODUCT_PACKAGES += \
     libcryptfs_hw \
     charger_res_images \
     charger
 
-PRODUCT_NAME := omni_c7proltedd
+PRODUCT_NAME := lineage_c7proltedd
 PRODUCT_DEVICE := c7proltedd
 PRODUCT_BRAND := Samsung
 PRODUCT_MODEL := SM-C701F
 PRODUCT_MANUFACTURER := Samsung
-
-# DTB Work-Around
-PRODUCT_COPY_FILES += \
-    device/samsung/c7proltedd/dt.img:dt.img
